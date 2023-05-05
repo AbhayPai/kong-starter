@@ -1,0 +1,35 @@
+version: "3.9"
+networks:
+  default:
+    name: kong-net
+services:
+  kong-api-dbless-mode:
+    image: kong
+    hostname: kong-api-dbless-mode
+    container_name: kong-api-dbless-mode
+    environment:
+      KONG_DATABASE: "off"
+      KONG_DECLARATIVE_CONFIG: "/opt/kong/services.yml"
+      KONG_PROXY_ACCESS_LOG: "/dev/stdout"
+      KONG_PROXY_ERROR_LOG: "/dev/stderr"
+      # Optional configuration
+      # KONG_ADMIN_ACCESS_LOG: "/dev/stdout"
+      # KONG_ADMIN_ERROR_LOG: "/dev/stderr"
+      # KONG_ADMIN_LISTEN: "0.0.0.0:8001"
+      # KONG_ADMIN_GUI_URL: "http://localhost:8002"
+    command: "kong start"
+    ports:
+      # Port Routing for Application API's
+      - 8000:8000
+      - 8443:8443
+      # Port Routing for Admin API's
+      - 8001:8001
+      - 8444:8444
+      # Optional configuration
+      # Port Routing for Admin Dashboard
+      # - 8002:8002
+      # - 8445:8445
+      # - 8003:8003
+      # - 8004:8004
+    volumes:
+      - ./config:/opt/kong

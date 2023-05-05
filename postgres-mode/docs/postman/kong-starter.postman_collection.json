@@ -1,0 +1,794 @@
+{
+	"info": {
+		"_postman_id": "1e5d7f0d-8383-4b6d-a568-5da5f3ef102e",
+		"name": "Kong Starter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2864418"
+	},
+	"item": [
+		{
+			"name": "Admin API",
+			"item": [
+				{
+					"name": "Admin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{KONG_ADMIN_API}}/",
+							"host": [
+								"{{KONG_ADMIN_API}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Services",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{KONG_ADMIN_API}}/services",
+							"host": [
+								"{{KONG_ADMIN_API}}"
+							],
+							"path": [
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Routes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{KONG_ADMIN_API}}/routes",
+							"host": [
+								"{{KONG_ADMIN_API}}"
+							],
+							"path": [
+								"routes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Service -> Routes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{KONG_ADMIN_API}}/services/service-name/routes",
+							"host": [
+								"{{KONG_ADMIN_API}}"
+							],
+							"path": [
+								"services",
+								"service-name",
+								"routes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Healthcheck",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{KONG_ADMIN_API}}/status",
+							"host": [
+								"{{KONG_ADMIN_API}}"
+							],
+							"path": [
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consumers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{KONG_ADMIN_API}}/consumers",
+							"host": [
+								"{{KONG_ADMIN_API}}"
+							],
+							"path": [
+								"consumers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Global Plugin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{KONG_ADMIN_API}}/plugins",
+							"host": [
+								"{{KONG_ADMIN_API}}"
+							],
+							"path": [
+								"plugins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Routes -> Plugin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{KONG_ADMIN_API}}/routes/route-name/plugins",
+							"host": [
+								"{{KONG_ADMIN_API}}"
+							],
+							"path": [
+								"routes",
+								"route-name",
+								"plugins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upstreams",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{KONG_ADMIN_API}}/upstreams",
+							"host": [
+								"{{KONG_ADMIN_API}}"
+							],
+							"path": [
+								"upstreams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Degraphql Routes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "uri",
+									"value": "/management/article",
+									"type": "text"
+								},
+								{
+									"key": "query",
+									"value": "query { brightspot_article_ArticleQuery { items { headline }}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{KONG_ADMIN_API}}/services/service-name/degraphql/routes",
+							"host": [
+								"{{KONG_ADMIN_API}}"
+							],
+							"path": [
+								"services",
+								"service-name",
+								"degraphql",
+								"routes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Degraphql \"Routes\" Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{KONG_ADMIN_API}}/services/service-name/degraphql/routes/route-id",
+							"host": [
+								"{{KONG_ADMIN_API}}"
+							],
+							"path": [
+								"services",
+								"service-name",
+								"degraphql",
+								"routes",
+								"route-id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Degraphql \"Routes\"",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{KONG_ADMIN_API}}/services/service-name/degraphql/routes/route-id",
+							"host": [
+								"{{KONG_ADMIN_API}}"
+							],
+							"path": [
+								"services",
+								"service-name",
+								"degraphql",
+								"routes",
+								"route-id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Workspace Config",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "config.portal",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{KONG_ADMIN_API}}/workspaces/default",
+							"host": [
+								"{{KONG_ADMIN_API}}"
+							],
+							"path": [
+								"workspaces",
+								"default"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Application API",
+			"item": [
+				{
+					"name": "Brightspot",
+					"item": [
+						{
+							"name": "Article",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Api-Key",
+										"value": "{{BRIGHTSPOT_SECRET}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query ArticleGraphqlQuery {\n    brightspot_article_ArticleQuery {\n        items {\n            headline\n        }\n    }\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "{{BRIGHTSPOT_APP_ENDPOINT}}/graphql/articles",
+									"host": [
+										"{{BRIGHTSPOT_APP_ENDPOINT}}"
+									],
+									"path": [
+										"graphql",
+										"articles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Service \"Articles\"",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{KONG_ADMIN_API}}/services/brightspotservice/degraphql/routes",
+									"host": [
+										"{{KONG_ADMIN_API}}"
+									],
+									"path": [
+										"services",
+										"brightspotservice",
+										"degraphql",
+										"routes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create \"Articles\"",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "uri",
+											"value": "/articles",
+											"type": "text"
+										},
+										{
+											"key": "query",
+											"value": "query ArticleGraphqlQuery {\n    brightspot_article_ArticleQuery {\n        items {\n            headline\n        }\n    }\n}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{KONG_ADMIN_API}}/services/brightspotservice/degraphql/routes",
+									"host": [
+										"{{KONG_ADMIN_API}}"
+									],
+									"path": [
+										"services",
+										"brightspotservice",
+										"degraphql",
+										"routes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Call \"Articles\"",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Api-Key",
+										"value": "{{BRIGHTSPOT_SECRET}}"
+									}
+								],
+								"url": {
+									"raw": "{{KONG_APP_API}}/brightspot/api/articles",
+									"host": [
+										"{{KONG_APP_API}}"
+									],
+									"path": [
+										"brightspot",
+										"api",
+										"articles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete \"Articles\"",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{KONG_ADMIN_API}}/services/brightspot/degraphql/routes/7b087a87-e629-4b7c-965c-ad60cc3961eb",
+									"host": [
+										"{{KONG_ADMIN_API}}"
+									],
+									"path": [
+										"services",
+										"brightspot",
+										"degraphql",
+										"routes",
+										"7b087a87-e629-4b7c-965c-ad60cc3961eb"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Patch \"Articles\"",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{KONG_ADMIN_API}}/services/brightspot/degraphql/routes/7b087a87-e629-4b7c-965c-ad60cc3961eb",
+									"host": [
+										"{{KONG_ADMIN_API}}"
+									],
+									"path": [
+										"services",
+										"brightspot",
+										"degraphql",
+										"routes",
+										"7b087a87-e629-4b7c-965c-ad60cc3961eb"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Drupal",
+					"item": [
+						{
+							"name": "JsonApi Articles",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{DRUPAL_APP_ENDPOINT}}/jsonapi/node/article",
+									"host": [
+										"{{DRUPAL_APP_ENDPOINT}}"
+									],
+									"path": [
+										"jsonapi",
+										"node",
+										"article"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Article",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{KONG_APP_API}}/drupal/api/articles",
+									"host": [
+										"{{KONG_APP_API}}"
+									],
+									"path": [
+										"drupal",
+										"api",
+										"articles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Article Key Auth",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "apiKey",
+										"value": "{{KONG_KEY_AUTH}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{KONG_APP_API}}/drupal/api/articles",
+									"host": [
+										"{{KONG_APP_API}}"
+									],
+									"path": [
+										"drupal",
+										"api",
+										"articles"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Drupal BasicAuth",
+					"item": [
+						{
+							"name": "ViewsApi Articles",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{DRUPAL_BASIC_AUTH}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{DRUPAL_APP_ENDPOINT}}/api/v1/articles?_format=json",
+									"host": [
+										"{{DRUPAL_APP_ENDPOINT}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"articles"
+									],
+									"query": [
+										{
+											"key": "_format",
+											"value": "json"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Article BAuth",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{DRUPAL_BASIC_AUTH}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{KONG_APP_API}}/drupal/api/views/articles?_format=json",
+									"host": [
+										"{{KONG_APP_API}}"
+									],
+									"path": [
+										"drupal",
+										"api",
+										"views",
+										"articles"
+									],
+									"query": [
+										{
+											"key": "_format",
+											"value": "json"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Github",
+					"item": [
+						{
+							"name": "Me",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{GITHUB_SECRET}}"
+									}
+								],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query MeQuery {\n  viewer {\n    name\n    location\n  }\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "https://api.github.com/graphql",
+									"protocol": "https",
+									"host": [
+										"api",
+										"github",
+										"com"
+									],
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Service \"Me\"",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{KONG_ADMIN_API}}/services/githubservice/degraphql/routes",
+									"host": [
+										"{{KONG_ADMIN_API}}"
+									],
+									"path": [
+										"services",
+										"githubservice",
+										"degraphql",
+										"routes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create \"Me\"",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "uri",
+											"value": "/me",
+											"type": "text"
+										},
+										{
+											"key": "query",
+											"value": "query MeQuery {\n  viewer {\n    name\n    location\n  }\n}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{KONG_ADMIN_API}}/services/githubservice/degraphql/routes",
+									"host": [
+										"{{KONG_ADMIN_API}}"
+									],
+									"path": [
+										"services",
+										"githubservice",
+										"degraphql",
+										"routes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Call \"Me\"",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{GITHUB_SECRET}}"
+									}
+								],
+								"url": {
+									"raw": "{{KONG_APP_API}}/github/api/me",
+									"host": [
+										"{{KONG_APP_API}}"
+									],
+									"path": [
+										"github",
+										"api",
+										"me"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete \"Me\"",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{KONG_ADMIN_API}}/services/github/degraphql/routes/67602eb6-3f08-41f9-9ec6-72f6e5f92f6f",
+									"host": [
+										"{{KONG_ADMIN_API}}"
+									],
+									"path": [
+										"services",
+										"github",
+										"degraphql",
+										"routes",
+										"67602eb6-3f08-41f9-9ec6-72f6e5f92f6f"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Mocking",
+					"item": [
+						{
+							"name": "Forwarder",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{KONG_APP_API}}/mock",
+									"host": [
+										"{{KONG_APP_API}}"
+									],
+									"path": [
+										"mock"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Key Auth",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "apikey",
+										"value": "{{KONG_KEY_AUTH}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{KONG_APP_API}}/mock",
+									"host": [
+										"{{KONG_APP_API}}"
+									],
+									"path": [
+										"mock"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Basic Auth",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{KONG_BASIC_AUTH}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{KONG_APP_API}}/mock",
+									"host": [
+										"{{KONG_APP_API}}"
+									],
+									"path": [
+										"mock"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
